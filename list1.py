@@ -4,13 +4,6 @@ print(l[-1:-3:-1])
 l.insert(-3,21)
 print(l)
 print(l[-1:-4:-1])
-print(l.index(1))
-print(l.index(2))
 print(l.index(5))
-print(l.index(3))
-print(l)
-
-
-
 
 
