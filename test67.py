@@ -15,9 +15,18 @@ def partition(l):
     return track
 
 
+def qsort(l,start,end):
+    if start<end:
+       pos=partition(l)
+       qsort(l[start:pos-1],start,pos-1)
+       qsort(l[pos+1:],pos+1,end)
+
+
+
 if __name__=="__main__":
    l=[12,11,10,9,13,14,15,11]
-   partition(l)
+   qsort(l,0,len(l))
    print(l)
+
 
     
