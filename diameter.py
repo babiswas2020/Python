@@ -19,24 +19,28 @@ def height(node):
                   queue.append(m.left)
                if m.right:
                   queue.append(m.right)
+               queue_len=queue_len-1
+       return count
     else:
       return 0
 
 def diameter(node):
-   right=left=0
-   l_height=r_height=0
-   if node:
-      if node.left:
-         left=diameter(node.left)
-      if node.right:
-         right=diameter(node.right)
-      if node.left:
-         l_height=height(node.left)
-      if node.right:
-         r_height=height(node.right)
-      return max(max(right,left),l_height+r_height+1)
-   else:
+   right=0
+   left=0
+   lheight=0
+   rheight=0
+   if not node:
       return 0
+   if node.left:
+      left=diameter(node.left)
+   if node.right:
+      right=diameter(node.right)
+   if node.left:
+      lheight=height(node.left)
+   if node.right:
+      rheight=height(node.right)
+   return max(lheight+rheight+1,max(left,right))
+   
 
 if __name__=="__main__":
    node=Node(12)
